@@ -2,6 +2,8 @@ package kz.petsclinic.clinic.collection;
 
 import kz.petsclinic.clinic.Person;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * Коллекция для работы с Персонами,
  * простое подобие ArrayList
@@ -23,6 +25,7 @@ public class PersonCollection {
      * масссив класса Person
      */
     private Person[] data;
+    final ReentrantLock lock = new ReentrantLock();
 
     public PersonCollection() {
         data = new Person[DEFAULT_DATA_CAPACITY];
@@ -44,8 +47,14 @@ public class PersonCollection {
      * @return запрошенную персону
      */
     public Person get(final int index) {
+        final ReentrantLock lock = this.lock;
+        lock.lock();
+        try {
             checkRange(index);
             return data[index];
+        } finally {
+            lock.unlock();
+        }
     }
 
     /**
@@ -54,8 +63,14 @@ public class PersonCollection {
      * @param person Новая Персона
      */
     public void add(final Person person) {
+        final ReentrantLock lock = this.lock;
+        lock.lock();
+        try {
             checkCapacity();
             data[size++] = person;
+        } finally {
+            lock.unlock();
+        }
     }
 
     /**
@@ -65,9 +80,15 @@ public class PersonCollection {
      * удаляемой персоны
      */
     public void remove(final int index) {
+        final ReentrantLock lock = this.lock;
+        lock.lock();
+        try {
             checkRange(index);
             System.arraycopy(data, index + 1, data, index, size - index - 1);
             data[--size] = null;
+        } finally {
+            lock.unlock();
+        }
     }
 
     /**
@@ -96,11 +117,17 @@ public class PersonCollection {
      * такая Персона не найдена
      */
     public int getPersonId(Person person) {
+        final ReentrantLock lock = this.lock;
+        lock.lock();
+        try {
             int result = -1;
             for (int i = 0; i < size; i++) {
                 if (data[i].equals(person)) result = i;
             }
             return result;
+        } finally {
+            lock.unlock();
+        }
     }
 
     @Override
