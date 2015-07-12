@@ -26,7 +26,7 @@ public class User implements Runnable{
         for (int i = 0; i < 520; i++) {
             String getPName = getPetName();
             if (controller.removeByPetName(getPName) == false) {
-                System.out.println("User operations: remove failed / Person name " + getPName);
+                System.out.println("User operations: remove failed / Pet name " + getPName);
                 failCount++;
             }
             /*String getPName = getPersonName();
