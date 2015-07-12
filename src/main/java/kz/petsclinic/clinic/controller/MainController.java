@@ -30,6 +30,8 @@ public class MainController {
             case "Dog":     pet = new Dog(nameOfPet);
         }
         Person person = new Person(nameOfPerson, pet);
+        if (clinic.getPersonId(getBlankPersonByName(nameOfPerson)) >= 0)
+            return false;
         clinic.add(person);
         return true;
     }
@@ -62,7 +64,9 @@ public class MainController {
 
     public boolean renamePerson(final String nameOfPerson, final String newNameOfPerson) {
         int idOfPerson = clinic.getPersonId(getBlankPersonByName(nameOfPerson));
-        if (idOfPerson >= 0) clinic.get(idOfPerson).setNameOfPerson(newNameOfPerson);
+        if (clinic.getPersonId(getBlankPersonByName(newNameOfPerson)) < 0) {
+            if (idOfPerson >= 0) clinic.get(idOfPerson).setNameOfPerson(newNameOfPerson);
+        } else idOfPerson = -1;
         return idOfPerson < 0 ? false : true;
     }
 
