@@ -1,6 +1,6 @@
 ### Занятие 12 Многопоточность. 
 Реализовано через java.util.concurrent.locks.ReentrantLock<br>
-<tr>
+например:
 ```
 public void add(final Person person) {
         final ReentrantLock lock = this.lock;
