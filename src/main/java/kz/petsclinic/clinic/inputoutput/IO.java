@@ -23,6 +23,8 @@ public class IO {
     private static final String ASK_NEW_NAME_FOR_PET = "Pls enter new name for Pet";
 
     private static final String NOT_FOUND = "Not found!";
+    private static final String MSG_OPERATION_COMPLETE = "Operation complete";
+    private static final String MSG_OPERATION_FAILED = "Operation failed";
 
 
     public static void print(String stringToOutput) {
@@ -34,7 +36,7 @@ public class IO {
     }
 
     public static String getString() {
-        String result = null;
+        String result;
         try (Scanner scanner = new Scanner(System.in)) {
             result = scanner.nextLine();
         }
@@ -57,8 +59,9 @@ public class IO {
         print(MSG_NAME_ALREADY_USED);
     }
 
-    public static void askForPetType() {
+    public static String askAndGetTypeForPet() {
         print(ASK_TYPE_OF_PET);
+        return getString();
     }
 
     public static String getUserChoice() {
@@ -112,5 +115,13 @@ public class IO {
 
     public static void clinicIsEmpty() {
         print(MSG_CLINIC_IS_EMPTY);
+    }
+
+    public static void success() {
+        print(MSG_OPERATION_COMPLETE);
+    }
+
+    public static void fail() {
+        print(MSG_OPERATION_FAILED);
     }
 }

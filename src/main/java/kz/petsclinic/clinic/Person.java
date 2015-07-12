@@ -32,7 +32,7 @@ public class Person {
 
     @Override
     public boolean equals(Object obj) {
-        boolean result = false;
+        boolean result;
         if (!(obj instanceof Person)) return false;
         Person entry = (Person) obj;
         if (entry.nameOfPerson == null)
