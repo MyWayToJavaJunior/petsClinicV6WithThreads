@@ -92,21 +92,13 @@ public class PersonCollection {
     }
 
     /**
-     * новый размер для массива
-     * @return новый размер
-     */
-    public int getNewCapacity() {
-        return (data.length * 3) / 2 + 1;
-    }
-
-    /**
      * проверка пуст ли
      * валидный массив
      * @return true если пуст,
      * false если нет
      */
     public boolean isEmpty() {
-        return size == 0;
+        return size() == 0;
     }
 
     /**
@@ -130,13 +122,24 @@ public class PersonCollection {
         }
     }
 
+    /**
+     * Переопределенный toString
+     * для вывода всего массива
+     * @return
+     */
     @Override
     public String toString() {
+        final ReentrantLock lock = this.lock;
+        lock.lock();
+        try {
         StringBuilder sBuilder = new StringBuilder();
         for (int i = 0; i < size; i++) {
             sBuilder.append("[ " + i + ": " + data[i].toString() +" ]\n");
         }
         return sBuilder.toString();
+        } finally {
+            lock.unlock();
+        }
     }
 
     /**
@@ -174,5 +177,27 @@ public class PersonCollection {
                     "index " + index + " out of 0.." + size);
     }
 
+    /**
+     * новый размер для массива
+     * @return новый размер
+     */
+    private int getNewCapacity() {
+        return (data.length * 3) / 2 + 1;
+    }
 
+    /**
+     *
+     * @return размер
+     * валидной части
+     * массива
+     */
+    private int size() {
+        final ReentrantLock lock = this.lock;
+        lock.lock();
+        try {
+            return size;
+        } finally {
+            lock.unlock();
+        }
+    }
 }
