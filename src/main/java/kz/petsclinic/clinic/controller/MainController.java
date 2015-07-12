@@ -40,12 +40,12 @@ public class MainController {
 
     public String getPersonByName(final String nameOfPerson) {
         int idOfPerson = clinic.getPersonId(getBlankPersonByName(nameOfPerson));
-        return idOfPerson < 0 ? "Not found" : clinic.get(idOfPerson).toString();
+        return idOfPerson < 0 ? "Not found" : "> " + clinic.get(idOfPerson).toString();
     }
 
     public String getPersonByPetName(final String nameOfPet) {
         int idOfPerson = clinic.getPersonId(getBlankPersonByPetName(nameOfPet));
-        return idOfPerson < 0 ? "Not found" : clinic.get(idOfPerson).toString();
+        return idOfPerson < 0 ? "Not found" : "> " + clinic.get(idOfPerson).toString();
     }
 
     public boolean removeByName(final String nameOfPerson) {
@@ -68,7 +68,7 @@ public class MainController {
 
     public boolean renamePet(final String nameOfPet, final String newNameOfPet) {
         int idOfPerson = clinic.getPersonId(getBlankPersonByPetName(nameOfPet));
-        if (idOfPerson >= 0) clinic.get(idOfPerson).setNameOfPerson(newNameOfPet);
+        if (idOfPerson >= 0) clinic.get(idOfPerson).setNameOfPet(newNameOfPet);
         return idOfPerson < 0 ? false : true;
     }
 

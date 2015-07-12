@@ -98,7 +98,7 @@ public class PersonCollection {
     public int getPersonId(Person person) {
         int result = -1;
         for (int i = 0; i < size; i++) {
-            if (person.equals(data[i])) result = i;
+            if (data[i].equals(person)) result = i;
         }
         return result;
     }

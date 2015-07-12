@@ -35,11 +35,10 @@ public class Person {
         boolean result = false;
         if (!(obj instanceof Person)) return false;
         Person entry = (Person) obj;
-        if (entry.nameOfPerson == null) {
-            if(entry.pet != null) result = pet.getNameOfPet().equals(entry.getNameOfPet());
-        }
+        if (entry.nameOfPerson == null)
+            result = pet.getNameOfPet().equals(entry.getNameOfPet());
         else
-            if (nameOfPerson != null) result = nameOfPerson.equals(entry.nameOfPerson);
+            result = nameOfPerson.equals(entry.nameOfPerson);
         return result;
     }
 

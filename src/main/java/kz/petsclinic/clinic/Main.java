@@ -19,10 +19,5 @@ public class Main {
 
         System.out.println(controller.getAll());
 
-
-        //controller.removeByName("vasya");
-        controller.removeByPetName("vasinkot");
-
-        System.out.println(controller.getAll());
     }
 }
