@@ -24,11 +24,12 @@ public class User implements Runnable{
     public void run() {
         long timer = - System.currentTimeMillis();
         for (int i = 0; i < 520; i++) {
-            String getPName = getPetName();
-            if (controller.removeByPetName(getPName) == false) {
-                System.out.println("User operations: remove failed / Pet name " + getPName);
+            String getPName = getPersonName();
+            String getNewPName = getPersonName();
+            if (controller.renamePerson(getPName, getNewPName) == false) {
+                System.out.println("User operations: rename failed / Person name " + getPName + " not renamed to " +getNewPName);
                 failCount++;
-            }
+            } else System.out.println("User operations: successfully renamed / " + getPName + " to " +getNewPName);
             /*String getPName = getPersonName();
             if (controller.removeByName(getPName) == false) {
                 System.out.println("User operations: remove failed / Pet name " + getPName);

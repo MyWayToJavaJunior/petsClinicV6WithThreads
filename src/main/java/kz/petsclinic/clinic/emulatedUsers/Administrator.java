@@ -29,6 +29,12 @@ public class Administrator implements Runnable{
                 System.out.println("Administrator operations: add failed / name " + getPName);
                 failCount++;
             }
+            sleep();
+            getPName = getPersonName();
+            if (controller.removeByName(getPName) == false) {
+                System.out.println("Administrator operations: remove failed / name " + getPName);
+                failCount++;
+            }
             System.out.println(controller.getAll());
             sleep();
         }
