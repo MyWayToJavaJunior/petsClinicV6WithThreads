@@ -8,8 +8,7 @@ import kz.petsclinic.clinic.pets.Cat;
 import kz.petsclinic.clinic.pets.Dog;
 
 /**
- * Прямой котроллер для работы с
- * коллекцией
+ * РћСЃРЅРѕРІРЅРѕР№ РєРѕРЅС‚СЂСЂРѕР»Р»РµСЂ
  */
 public class MainController {
     private PersonCollection clinic;
@@ -53,13 +52,13 @@ public class MainController {
     public boolean removeByName(final String nameOfPerson) {
         int idOfPerson = clinic.getPersonId(getBlankPersonByName(nameOfPerson));
         if (idOfPerson >= 0) clinic.remove(idOfPerson);
-        return idOfPerson < 0 ? false : true;
+        return idOfPerson >= 0;
     }
 
     public boolean removeByPetName(final String nameOfPet) {
         int idOfPerson = clinic.getPersonId(getBlankPersonByPetName(nameOfPet));
         if (idOfPerson >= 0) clinic.remove(idOfPerson);
-        return idOfPerson < 0 ? false : true;
+        return idOfPerson >= 0;
     }
 
     public boolean renamePerson(final String nameOfPerson, final String newNameOfPerson) {
@@ -67,13 +66,13 @@ public class MainController {
         if (clinic.getPersonId(getBlankPersonByName(newNameOfPerson)) < 0) {
             if (idOfPerson >= 0) clinic.get(idOfPerson).setNameOfPerson(newNameOfPerson);
         } else idOfPerson = -1;
-        return idOfPerson < 0 ? false : true;
+        return idOfPerson >= 0;
     }
 
     public boolean renamePet(final String nameOfPet, final String newNameOfPet) {
         int idOfPerson = clinic.getPersonId(getBlankPersonByPetName(nameOfPet));
         if (idOfPerson >= 0) clinic.get(idOfPerson).setNameOfPet(newNameOfPet);
-        return idOfPerson < 0 ? false : true;
+        return idOfPerson >= 0;
     }
 
     private Person getBlankPersonByPetName(final String nameOfPet) {

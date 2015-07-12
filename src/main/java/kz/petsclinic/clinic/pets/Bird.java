@@ -1,7 +1,7 @@
 package kz.petsclinic.clinic.pets;
 
 /**
- * Птица унаследована от AbstractPet
+ * РџС‚РёС†Р° СѓРЅР°СЃР»РµРґРѕРІР°РЅР° РѕС‚ AbstractPet
  */
 public class Bird extends AbstractPet {
 

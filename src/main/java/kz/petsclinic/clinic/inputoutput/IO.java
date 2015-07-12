@@ -3,7 +3,7 @@ package kz.petsclinic.clinic.inputoutput;
 import java.util.Scanner;
 
 /**
- * Класс ввода-вывода
+ * РљР»Р°СЃСЃ РІРІРѕРґР°-РІС‹РІРѕРґР°
  */
 public class IO {
     public static final String MSG_MAIN_MENU = "1 - view all | Person: 3 remove * 4 rename * 5 view |  0 - exit\n" +

@@ -3,7 +3,7 @@ package kz.petsclinic.clinic;
 import kz.petsclinic.clinic.pets.AbstractPet;
 
 /**
- * Запись - Персона
+ * Р•РґРёРЅРёС†Р° РґР°РЅРЅС‹С… РІ РєР»РёРЅРёРєРµ
  */
 public class Person {
     private String nameOfPerson;

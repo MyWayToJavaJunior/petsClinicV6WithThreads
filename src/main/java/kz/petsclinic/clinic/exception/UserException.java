@@ -1,7 +1,7 @@
 package kz.petsclinic.clinic.exception;
 
 /**
- * пользовательские ошибки
+ * РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёРµ РѕС€РёР±РєРё
  */
 public class UserException extends Exception{
     public UserException(final String message) {

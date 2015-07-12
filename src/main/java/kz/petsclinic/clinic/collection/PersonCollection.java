@@ -44,8 +44,8 @@ public class PersonCollection {
      * @return запрошенную персону
      */
     public Person get(final int index) {
-        checkRange(index);
-        return data[index];
+            checkRange(index);
+            return data[index];
     }
 
     /**
@@ -54,8 +54,8 @@ public class PersonCollection {
      * @param person Новая Персона
      */
     public void add(final Person person) {
-        checkCapacity();
-        data[size++] = person;
+            checkCapacity();
+            data[size++] = person;
     }
 
     /**
@@ -65,9 +65,9 @@ public class PersonCollection {
      * удаляемой персоны
      */
     public void remove(final int index) {
-        checkRange(index);
-        System.arraycopy(data, index + 1, data, index, size - index - 1);
-        data[--size] = null;
+            checkRange(index);
+            System.arraycopy(data, index + 1, data, index, size - index - 1);
+            data[--size] = null;
     }
 
     /**
@@ -96,11 +96,11 @@ public class PersonCollection {
      * такая Персона не найдена
      */
     public int getPersonId(Person person) {
-        int result = -1;
-        for (int i = 0; i < size; i++) {
-            if (data[i].equals(person)) result = i;
-        }
-        return result;
+            int result = -1;
+            for (int i = 0; i < size; i++) {
+                if (data[i].equals(person)) result = i;
+            }
+            return result;
     }
 
     @Override

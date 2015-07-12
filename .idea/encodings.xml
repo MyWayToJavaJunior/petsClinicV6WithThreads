@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/kz/petsclinic/clinic/Main.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/kz/petsclinic/clinic/Person.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/kz/petsclinic/clinic/collection/PersonCollection.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/kz/petsclinic/clinic/emulatedUsers/Administrator.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/kz/petsclinic/clinic/emulatedUsers/Generator.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/kz/petsclinic/clinic/emulatedUsers/User.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/kz/petsclinic/clinic/exception/UserException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/kz/petsclinic/clinic/inputoutput/IO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/kz/petsclinic/clinic/pets/AbstractPet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/kz/petsclinic/clinic/pets/Bird.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/kz/petsclinic/clinic/pets/Cat.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/kz/petsclinic/clinic/pets/Dog.java" charset="UTF-8" />
+  </component>
+</project>

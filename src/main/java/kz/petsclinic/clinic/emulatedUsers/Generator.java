@@ -3,8 +3,8 @@ package kz.petsclinic.clinic.emulatedUsers;
 import java.util.Random;
 
 /**
- * Генерация имен для
- * Персон и животных
+ * Р“РµРЅРµСЂР°С†РёСЏ РёРјРµРЅ РґР»СЏ
+ * РџРµСЂСЃРѕРЅ Рё Р¶РёРІРѕС‚РЅС‹С…
  */
 public class Generator {
     private final static String[] PERSON_NAMES =

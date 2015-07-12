@@ -1,7 +1,7 @@
 package kz.petsclinic.clinic.pets;
 
 /**
- * Собака унаследована от AbstractPet
+ * РЎРѕР±Р°РєР° СѓРЅР°СЃР»РµРґРѕРІР°РЅР° РѕС‚ AbstractPet
  */
 public class Dog extends AbstractPet {
 
